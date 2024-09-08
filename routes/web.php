@@ -31,13 +31,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/settings', [DashboardController::class, 'settings'])->name('settings');
     // Penyimpanan
-    Route::get('penyimpanan', [PenyimpananController::class, 'index'])->name('penyimpanan.index');
-    Route::get('penyimpanan/create', [PenyimpananController::class, 'create'])->name('penyimpanan.create');
-    Route::post('penyimpanan', [PenyimpananController::class, 'store'])->name('penyimpanan.store');
-    Route::get('penyimpanan/{id}', [PenyimpananController::class, 'show'])->name('penyimpanan.show');
-    Route::get('penyimpanan/{id}/edit', [PenyimpananController::class, 'edit'])->name('penyimpanan.edit');
-    Route::put('penyimpanan/{id}', [PenyimpananController::class, 'update'])->name('penyimpanan.update');
-    Route::delete('penyimpanan/{id}', [PenyimpananController::class, 'destroy'])->name('penyimpanan.destroy');
+    Route::resource('penyimpanan', PenyimpananController::class);
     //Penjualan
     Route::get('penjualan', [PenjualanController::class, 'index'])->name('penjualan.index');
     Route::get('penjualan/create', [PenjualanController::class, 'create'])->name('penjualan.create');
