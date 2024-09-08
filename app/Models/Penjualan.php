@@ -17,4 +17,10 @@ class Penjualan extends Model
         'harga_satuan',
         'total',
     ];
+
+    protected $casts = [
+        'tanggal_penjualan' => 'date',
+        'harga_satuan' => 'decimal:2',
+        'total' => 'decimal:2',
+    ];
 }
